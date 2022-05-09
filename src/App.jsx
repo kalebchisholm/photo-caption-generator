@@ -1,10 +1,9 @@
+import { Page } from './pages/Page';
 import './App.css';
 
 export default function App() {
   return (
-    <div className="App">
-      hi
-    </div>
+    <Page />
   );
 }
 
