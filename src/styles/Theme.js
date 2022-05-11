@@ -5,6 +5,7 @@ export const myTheme = extendTheme ({
     centerBg: 'whitesmoke',
     btnColor: '#95BF47',
     btnHoverColor: '#64943E',
+    headerColor: '#151f36',
   },
   styles: {
     global: () => ({

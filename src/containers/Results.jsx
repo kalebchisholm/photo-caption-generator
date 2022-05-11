@@ -3,17 +3,25 @@
 //          user queries.
 
 // ------------------------------ IMPORTS -------------------------------------
-import { Box } from "@chakra-ui/react"
-
+import { Grid } from "@chakra-ui/react"
+import { CaptionCard } from '../components/CaptionCard'
 // ----------------------------- FUNCTION -------------------------------------
-export function Results() { 
+export function Results(props) { 
+
+  let count = 0
+
   return (
-    <Box 
-    border='2pt solid black' 
-    borderRadius='lg'
-    my='10px'
+    <Grid
+    m='20px'
+    gap='5px'
+    minH='fit-content'
+    maxH='100vh'
     >
-      this is a placeholder
-    </Box>
+      {
+        props.data.map((content) => 
+          <CaptionCard key={count++} data={content}/>
+        )
+      }
+    </Grid>
   )
 }
