@@ -8,7 +8,10 @@ export function Results({captions}) {
   return (
     <Center>
       <Stack mt='20px'>
-        <Text>
+        <Text
+          fontSize='xl'
+          fontWeight='semibold'
+        >
           Results:
         </Text>
         <Box

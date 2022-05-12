@@ -7,10 +7,9 @@ import {
   Center, 
   Box
 } from '@chakra-ui/react'
-import { Presets } from '../components/Presets';
+import { Preset } from '../components/Preset';
 
 const { Configuration, OpenAIApi } = require("openai");
-
 // ------------------------------ FUNCTION ------------------------------------
 export function CaptionForm(props) {
 
@@ -22,13 +21,12 @@ export function CaptionForm(props) {
 
   const handleSubmit = e => {
     e.preventDefault()
-
     if (!caption) {
       return
     }
 
     const configuration = new Configuration({
-      apiKey: '',
+      apiKey: process.env.REACT_APP_OPENAI_SECRET
     });
 
     const openai = new OpenAIApi(configuration)
@@ -42,6 +40,7 @@ export function CaptionForm(props) {
       presence_penalty: 0,
     })
     .then((response) => {
+      props.setResults(true)
       props.onSubmit({
         themes: caption,
         text: response.data.choices[0].text
@@ -67,9 +66,9 @@ export function CaptionForm(props) {
             <Button
               type='submit'
               onClick={handleSubmit}
+              ml='10px'
               bg='btnColor'
               border='2pt solid black'
-              ml='10px'
               _hover={{
                 bg: 'btnHoverColor'
               }}
@@ -79,22 +78,22 @@ export function CaptionForm(props) {
           </Flex>
         </Grid>
         <Flex flexWrap='wrap' justifyContent='space-evenly' mt='10px'>
-          <Presets data={'Food'} onClick={handleChange} />
-          <Presets data={'Family'} onClick={handleChange} />
-          <Presets data={'Friends'} onClick={handleChange} />
-          <Presets data={'Outdoors'} onClick={handleChange} />
-          <Presets data={'Scenery'} onClick={handleChange} />
-          <Presets data={'Movies'} onClick={handleChange} />
-          <Presets data={'Parties'} onClick={handleChange} />
-          <Presets data={'Reading'} onClick={handleChange} />
-          <Presets data={'Cars'} onClick={handleChange} />
-          <Presets data={'Beach'} onClick={handleChange} />
-          <Presets data={'Video Games'} onClick={handleChange} />
-          <Presets data={'Hanging out by the beach'} onClick={handleChange} />
-          <Presets data={'Barbeque and Family'} onClick={handleChange} />
-          <Presets data={'Cute Animals'} onClick={handleChange} />
-          <Presets data={'Fun in the sun'} onClick={handleChange} />
-          <Presets data={'Music'} onClick={handleChange} />
+          <Preset data={'Food'} onClick={handleChange} />
+          <Preset data={'Family'} onClick={handleChange} />
+          <Preset data={'Friends'} onClick={handleChange} />
+          <Preset data={'Outdoors'} onClick={handleChange} />
+          <Preset data={'Scenery'} onClick={handleChange} />
+          <Preset data={'Movies'} onClick={handleChange} />
+          <Preset data={'Parties'} onClick={handleChange} />
+          <Preset data={'Reading'} onClick={handleChange} />
+          <Preset data={'Cars'} onClick={handleChange} />
+          <Preset data={'Beach'} onClick={handleChange} />
+          <Preset data={'Video Games'} onClick={handleChange} />
+          <Preset data={'Hanging out by the beach'} onClick={handleChange} />
+          <Preset data={'Barbeque and Family'} onClick={handleChange} />
+          <Preset data={'Cute Animals'} onClick={handleChange} />
+          <Preset data={'Fun in the sun'} onClick={handleChange} />
+          <Preset data={'Music'} onClick={handleChange} />
           {/* // TODO: add some more, ALSO try #'s and other short sentences! */}
         </Flex>
       </Box>

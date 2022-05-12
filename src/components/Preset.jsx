@@ -1,6 +1,6 @@
 import { Button } from '@chakra-ui/react'
 
-export function Presets(props) {
+export function Preset(props) {
   return (
     <Button 
       value={props.data} 
