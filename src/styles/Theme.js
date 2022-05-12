@@ -2,15 +2,17 @@ import { extendTheme } from '@chakra-ui/react'
 
 export const myTheme = extendTheme ({
   colors: {
-    centerBg: 'whitesmoke',
-    btnColor: '#95BF47',
-    btnHoverColor: '#64943E',
-    headerColor: '#151f36',
+    primary: '#7371FC',       // medium slate blue
+    secondary: '#FDFFFC',     // middle yellow
+    btnColor: '#7371FC',
+    btnHoverColor: '#B0AFFD', // medium slate blue
+    headerColor: '#151f36'
   },
   styles: {
     global: () => ({
       body: {
-        bg: '#edeadf',
+        bg: '#E8E9EB',       // platinum
+        // bg: '#E0DFD5',    // alabaster
         color: 'black',
       }
     })

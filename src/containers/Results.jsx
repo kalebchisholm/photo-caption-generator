@@ -1,27 +1,36 @@
-// FILE: Results.jsx
-// PURPOSE: The container for all of the results that are returned from the
-//          user queries.
+import { CaptionCard } from "../components/CaptionCard"
+import { Box, Center, Text, Stack } from "@chakra-ui/react"
 
-// ------------------------------ IMPORTS -------------------------------------
-import { Grid } from "@chakra-ui/react"
-import { CaptionCard } from '../components/CaptionCard'
-// ----------------------------- FUNCTION -------------------------------------
-export function Results(props) { 
+export function Results({captions}) {
 
-  let count = 0
+  let keyNumber = 0
 
   return (
-    <Grid
-    m='20px'
-    gap='5px'
-    minH='fit-content'
-    maxH='100vh'
-    >
-      {
-        props.data.map((content) => 
-          <CaptionCard key={count++} data={content}/>
-        )
-      }
-    </Grid>
+    <Center>
+      <Stack mt='20px'>
+        <Text>
+          Results:
+        </Text>
+        <Box
+          borderRadius='lg'
+          borderTopRadius='none'
+          borderTop='2pt solid black'
+          m='10px'
+          w='50vw'
+          maxH='45vh'
+          overflow='auto'
+        >
+          {
+            captions.map((caption) => (
+              <CaptionCard 
+                key={keyNumber++}
+                themes={caption.themes} 
+                data={caption.text}
+              />
+            ))
+          }
+        </Box>
+      </Stack>
+    </Center>
   )
 }

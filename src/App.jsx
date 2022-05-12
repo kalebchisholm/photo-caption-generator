@@ -1,8 +1,8 @@
-import { Page } from './pages/Page';
+import { CaptionList } from './pages/CaptionList';
 
 export default function App() {
   return (
-    <Page />
+    <CaptionList />
   );
 }
 
