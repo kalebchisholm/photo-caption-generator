@@ -1,5 +1,18 @@
+/** 
+ * FILE: Preset.jsx
+ * AUTHOR: Kaleb Chisholm
+ * LAST MODIFIED: 05/13/2022
+ * 
+ * PURPOSE: Function component for a preset which the user can click on
+ *          to quickly enter prompts for the generator.
+*/
+
+
+// ------------------------------- IMPORTS ------------------------------------
 import { Button } from '@chakra-ui/react'
 
+
+// ------------------------------ FUNCTION ------------------------------------
 export function Preset(props) {
   return (
     <Button 

@@ -1,7 +1,7 @@
 /** 
  * FILE: CaptionForm.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/12/2022
+ * LAST MODIFIED: 05/13/2022
  * 
  * PURPOSE: Function component for the form which the user generates
  *          captions from and container for <Presets/>.
@@ -19,33 +19,35 @@ import {
   Box
 } from '@chakra-ui/react'
 import { Preset } from '../components/Preset';
+import { PresetAccordion } from './PresetAccordion';
 
 const { Configuration, OpenAIApi } = require("openai");
+
 
 // ------------------------------ FUNCTION ------------------------------------
 export function CaptionForm(props) {
 
-  const [caption, setCaption] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [caption, setCaption] = useState('')         // returned captions
+  const [loading, setLoading] = useState(false)      // results loading
 
+  // Handle change in input bar
   const handleChange = e => {
     setCaption(e.target.value)
   }
 
+  // Handle submission of input
   const handleSubmit = e => {
     e.preventDefault()
-    if (!caption) {
-      return
-    }
+    if (!caption) return  // prevent empty submissions
+    setLoading(true)      // stop further submissions until results complete loading
     
-    setLoading(true)
-    
+    // OPENAI CONFIGURATION
     const configuration = new Configuration({
       apiKey: process.env.REACT_APP_OPENAI_SECRET
     });
-
     const openai = new OpenAIApi(configuration)
 
+    // FETCH OPENAI 
     openai.createCompletion("text-curie-001", {
       prompt: `Write a creative and simple photo caption for a post on social media that involves the following genres: ${caption}.`,
       temperature: 0.7,
@@ -55,13 +57,13 @@ export function CaptionForm(props) {
       presence_penalty: 0,
     })
     .then((response) => {
-      props.setResults(true)
+      props.setResults(true)   // results have been returned
       props.onSubmit({
         themes: caption,
         text: response.data.choices[0].text
       })
-      setCaption('')
-      setLoading(false)
+      setCaption('')      // clear input bar
+      setLoading(false)   // allow for more submissions
     })
   }
 
@@ -96,24 +98,7 @@ export function CaptionForm(props) {
             </Button>
           </Flex>
         </Grid>
-        <Flex flexWrap='wrap' justifyContent='center' mt='10px'>
-          <Preset data={'Food'} onClick={handleChange} />
-          <Preset data={'Family'} onClick={handleChange} />
-          <Preset data={'Friends'} onClick={handleChange} />
-          <Preset data={'Outdoors'} onClick={handleChange} />
-          <Preset data={'Scenery'} onClick={handleChange} />
-          <Preset data={'Movies'} onClick={handleChange} />
-          <Preset data={'Parties'} onClick={handleChange} />
-          <Preset data={'Reading'} onClick={handleChange} />
-          <Preset data={'Cars'} onClick={handleChange} />
-          <Preset data={'Beach'} onClick={handleChange} />
-          <Preset data={'Video Games'} onClick={handleChange} />
-          <Preset data={'Hanging out by the beach'} onClick={handleChange} />
-          <Preset data={'Barbeque and Family'} onClick={handleChange} />
-          <Preset data={'Cute Animals'} onClick={handleChange} />
-          <Preset data={'Fun in the sun'} onClick={handleChange} />
-          <Preset data={'Music'} onClick={handleChange} />
-        </Flex>
+        <PresetAccordion onClick={handleChange} />
       </Box>
     </Center>
   )

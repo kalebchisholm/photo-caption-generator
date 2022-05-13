@@ -1,5 +1,18 @@
+/** 
+ * FILE: CaptionCard.jsx
+ * AUTHOR: Kaleb Chisholm
+ * LAST MODIFIED: 05/13/2022
+ * 
+ * PURPOSE: Function component for a caption that is returned from
+ *          the generator.
+*/
+
+
+// ------------------------------- IMPORTS ------------------------------------
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 
+
+// ------------------------------ FUNCTION ------------------------------------
 export function CaptionCard(props) {
   return (
     <GridItem
