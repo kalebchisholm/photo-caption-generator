@@ -75,7 +75,7 @@ export function PresetAccordion(props) {
               borderBottomRadius='lg'
               bg='presetBg'
             >
-              <Flex maxW='56em' flexWrap='wrap' justifyContent='center' mt='10px'>
+              <Flex maxW='55em' flexWrap='wrap' justifyContent='center' mt='10px'>
                 {
                   presetData.map((content) => (
                     <Preset key={content} data={content} onClick={props.onClick} />
