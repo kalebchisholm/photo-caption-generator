@@ -1,21 +1,32 @@
-import { useState } from "react"
-import { Results } from "../containers/Results"
-import { CaptionForm } from "../containers/CaptionForm"
-import { Heading, Text, Flex, Box, Divider } from '@chakra-ui/react'
+/** 
+ * FILE: CaptionList.jsx
+ * AUTHOR: Kaleb Chisholm
+ * LAST MODIFIED: 05/12/2022
+ * 
+ * PURPOSE: Function component for the page which contains the user form
+ *          for the caption generator as well as displays presets and
+ *          the caption results.
+*/
 
+
+// ------------------------------- IMPORTS ------------------------------------
+import { useState } from 'react'
+import { Results } from '../containers/Results'
+import { CaptionForm } from '../containers/CaptionForm'
+import { Heading, Text, Flex, Box } from '@chakra-ui/react'
+
+
+// ------------------------------ FUNCTION ------------------------------------
 export function CaptionList() {
 
-  const [captions, setCaptions] = useState([])
-  const [isResults, setResults] = useState(false)
+  const [captions, setCaptions] = useState([])    // returned captions
+  const [isResults, setResults] = useState(false) // conditional <Results/> rendering
 
   const addCaption = caption => {
-    if(!caption.text || /^\s*$/.test(caption.text)) {
-      return
-    }
-
-    const newCaptions = [caption, ...captions]
-
-    setCaptions(newCaptions)
+    // Quick input check + clear extra whitespace
+    if (!caption.text || /^\s*$/.test(caption.text)) return
+    // add to list of captions
+    setCaptions([caption, ...captions])
   }
 
   return (
@@ -33,10 +44,10 @@ export function CaptionList() {
         Photo Caption Generator 📷
       </Heading>
       <Text
-        mx='auto'
-        my='20px'
-        w='50vw'
-        fontSize='2xl'
+        m='5px auto'
+        w={{md: '70vw', lg: '60vw', xl: '50vw'}}
+        px='20px'
+        fontSize={{base: 'lg', lg: '2xl'}}
         fontWeight='semibold'
       >
         Enter one or more themes, genres, or nouns. You can also
@@ -47,6 +58,7 @@ export function CaptionList() {
         {
           !isResults &&
           <Text
+            textAlign='center'
             w='fit-content'
             my='70px'
             mx='auto'

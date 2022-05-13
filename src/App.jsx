@@ -1,3 +1,9 @@
+/** 
+ * FILE: App.jsx
+ * AUTHOR: Kaleb Chisholm
+ * LAST MODIFIED: 05/12/2022
+*/
+
 import { CaptionList } from './pages/CaptionList'
 import { Landing } from './pages/Landing'
 import { 

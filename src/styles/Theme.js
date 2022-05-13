@@ -11,8 +11,7 @@ export const myTheme = extendTheme ({
   styles: {
     global: () => ({
       body: {
-        bg: '#E8E9EB',       // platinum
-        // bg: '#E0DFD5',    // alabaster
+        bg: '#E8E9EB',        // platinum
         color: 'black',
       }
     })
