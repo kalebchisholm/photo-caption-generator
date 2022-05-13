@@ -1,7 +1,7 @@
 /** 
  * FILE: Landing.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/12/2022
+ * LAST MODIFIED: 05/13/2022
  * 
  * PURPOSE: Function component for the landing (home) page which the user is
  *          first brought to upon reaching the app.
@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom'
 export function Landing() {
   return (
     <Box>
-      <Heading textAlign='center' fontSize='5xl' mt='15vh' px='15px'>
+      <Heading textAlign='center' fontSize='5xl' mt='10vw' px='20px'>
         Welcome to the Photo Caption Generator 📷
       </Heading>
       <Text

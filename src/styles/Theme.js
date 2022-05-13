@@ -6,7 +6,8 @@ export const myTheme = extendTheme ({
     secondary: '#FDFFFC',     // middle yellow
     btnColor: '#7371FC',
     btnHoverColor: '#B0AFFD', // medium slate blue
-    headerColor: '#151f36'
+    headerColor: '#151f36',
+    presetBg: '#D3D5D9',
   },
   styles: {
     global: () => ({

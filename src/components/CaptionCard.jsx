@@ -19,9 +19,9 @@ export function CaptionCard(props) {
       bg='white'
       borderRadius='lg'
       my='20px'
-      mr='10px'
       p='10px'
       shadow='5px 5px 5px #949494'
+      w='full'
     >
       <Grid templateColumns='auto 1fr' gap='10px'>
         <Text fontWeight='bold'>Topic(s):</Text>

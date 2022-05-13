@@ -1,4 +1,14 @@
+/** 
+ * FILE: PresetAccordion.jsx
+ * AUTHOR: Kaleb Chisholm
+ * LAST MODIFIED: 05/13/2022
+ * 
+ * PURPOSE: Function component for the container which displays all of the
+ *          presets in an accordion.
+*/
 
+
+// ------------------------------- IMPORTS ------------------------------------
 import { 
   Accordion, 
   AccordionButton, 
@@ -11,28 +21,61 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { Preset } from "../components/Preset";
 import { presetData } from '../data/presetData'
 
+
+// ------------------------------ FUNCTION ------------------------------------
 export function PresetAccordion(props) {
 
   return (
-    <Accordion allowToggle>
+    <Accordion allowToggle mt='10px'>
       <AccordionItem>
         {({ isExpanded }) => (
           <>
-            <AccordionButton>
-              {isExpanded ? (
-                <>
-                  <Text flex='1' textAlign='left'>Hide Presets</Text>
+            {isExpanded ? (
+              <>
+                <AccordionButton 
+                  border='2pt solid black' 
+                  borderTopRadius='lg'
+                  _hover={{
+                    bg: 'btnHoverColor'
+                  }}
+                >
+                  <Text 
+                    fontWeight='semibold' 
+                    flex='1' 
+                    textAlign='left'
+                    >
+                    Hide Presets
+                  </Text>
                   <AiOutlineMinus />
-                </>
-              ) : (
-                <>
-                  <Text flex='1' textAlign='left'>Expand Presets</Text>
-                  <AiOutlinePlus/>
-                </>
-              )}
-            </AccordionButton>
-            <AccordionPanel>
-              <Flex flexWrap='wrap' justifyContent='center' mt='10px'>
+                </AccordionButton>
+              </>
+            ) : (
+              <>
+                <AccordionButton 
+                  border='2pt solid black' 
+                  borderRadius='lg'
+                  _hover={{
+                    bg: 'btnHoverColor'
+                  }}
+                >
+                  <Text 
+                    fontWeight='semibold' 
+                    flex='1' 
+                    textAlign='left'
+                    >
+                    View Presets
+                  </Text>
+                  <AiOutlinePlus />
+                </AccordionButton>
+              </>
+            )}
+            <AccordionPanel
+              border='2pt solid black'
+              borderTopStyle='none'
+              borderBottomRadius='lg'
+              bg='presetBg'
+            >
+              <Flex maxW='56em' flexWrap='wrap' justifyContent='center' mt='10px'>
                 {
                   presetData.map((content) => (
                     <Preset key={content} data={content} onClick={props.onClick} />

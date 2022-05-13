@@ -1,7 +1,7 @@
 /** 
  * FILE: Results.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/12/2022
+ * LAST MODIFIED: 05/13/2022
  * 
  * PURPOSE: Function component for the container which displays all of the
  *          captions that are generated.
@@ -20,25 +20,20 @@ export function Results({captions}) {
 
   return (
     <Center>
-      <Stack 
-        mt='10px' 
-        mb={{base: '40px'}}
-        px='10px'
-      >
+      <Stack mt='10px' mb='40px'>
         <Text
           fontSize='xl'
           fontWeight='semibold'
+          pl='10px'
         >
           Results:
         </Text>
         <Box
-          borderRadius='lg'
-          borderTopRadius='none'
           borderTop='2pt solid black'
-          m='10px'
-          maxW={{lg:'62em'}}
+          w={{sm: '30em', md: '45em', lg: '57em'}}
           maxH={{base: '60vh', sm:'40vh'}}
-          overflow='auto'
+          overflowY='auto'
+          pr='10px'
         >
           {
             captions.map((caption) => (

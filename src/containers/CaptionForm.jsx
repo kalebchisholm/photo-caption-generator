@@ -14,8 +14,7 @@ import {
   Grid, 
   Input, 
   Flex, 
-  Button, 
-  Center, 
+  Button,
   Box
 } from '@chakra-ui/react'
 import { Preset } from '../components/Preset';
@@ -68,38 +67,36 @@ export function CaptionForm(props) {
   }
 
   return (
-    <Center>
-      <Box w={{lg: '50vw'}} m={{base: '5px 15px', md: '10px 60px'}}>
-        <Grid templateColumns={{base: '1fr', md: '1fr auto'}}>
-          <Input
-            id='search' 
-            type='search' 
-            bg='white'
-            border='2pt solid black !important'
-            placeholder='Genre/Theme/Noun'
-            value={caption}
-            onChange={handleChange}
-          />
-          <Flex justify='space-evenly'>
-            <Button
-              isLoading={loading}
-              type='submit'
-              onClick={handleSubmit}
-              ml={{md: '10px'}}
-              mt={{base: '10px', md: '0'}}
-              bg='btnColor'
-              w='full'
-              border='2pt solid black'
-              _hover={{
-                bg: 'btnHoverColor'
-              }}
-            >
-              Generate Caption
-            </Button>
-          </Flex>
-        </Grid>
-        <PresetAccordion onClick={handleChange} />
-      </Box>
-    </Center>
+    <Box>
+      <Grid templateColumns={{base: '1fr', md: '1fr auto'}}>
+        <Input
+          id='search' 
+          type='search' 
+          bg='white'
+          border='2pt solid black !important'
+          placeholder='Enter your prompt'
+          value={caption}
+          onChange={handleChange}
+        />
+        <Flex justify='space-evenly'>
+          <Button
+            isLoading={loading}
+            type='submit'
+            onClick={handleSubmit}
+            ml={{md: '10px'}}
+            mt={{base: '10px', md: '0'}}
+            bg='btnColor'
+            w='full'
+            border='2pt solid black'
+            _hover={{
+              bg: 'btnHoverColor'
+            }}
+          >
+            Generate Caption
+          </Button>
+        </Flex>
+      </Grid>
+      <PresetAccordion onClick={handleChange} />
+    </Box>
   )
 }
