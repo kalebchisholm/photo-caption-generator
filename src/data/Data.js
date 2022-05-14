@@ -1,3 +1,14 @@
+/** 
+ * FILE: Data.js
+ * AUTHOR: Kaleb Chisholm
+ * LAST MODIFIED: 05/14/2022
+ * 
+ * PURPOSE: Contain data used in the app.
+*/
+
+/** 
+ * PURPOSE: List of the names of the presets. 
+*/
 export const presetData = [
   'Food',
   'Family',
@@ -9,12 +20,13 @@ export const presetData = [
   'Parties',
   'Reading',
   'Cars',
-  'Beach',
   'Hanging out by the beach',
   'Barbeque and Family',
   'Cute Animals',
   'Music',
   '#park',
-  '#bythelake',
-  '#goodvibes'
+  '#gym',
+  '#life',
+  '#goodvibes',
+  '#nature'
 ]

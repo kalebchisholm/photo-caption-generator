@@ -19,7 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { Preset } from "../components/Preset";
-import { presetData } from '../data/presetData'
+import { presetData } from '../data/Data'
 
 
 // ------------------------------ FUNCTION ------------------------------------

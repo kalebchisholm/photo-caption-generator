@@ -57,7 +57,7 @@ export function CaptionForm(props) {
     .then((response) => {
       props.setResults(true)   // results have been returned
       props.onSubmit({
-        themes: caption,
+        topic: caption,
         text: response.data.choices[0].text
       })
       setCaption('')      // clear input bar
