@@ -53,3 +53,8 @@ The app is delivered to the user using React and is made clean and simple by uti
 3. Add a light/dark mode toggle feature.
 4. Add styling to show the user that the input is required to generate a caption (input bar outlined in red, with required text being displayed).
 5. Add animations using [Framer Motion](https://www.framer.com/motion/)
+6. Allow the user which GPT-3 engine they would like to use for their captions.
+
+
+## Note
+When using Google Chrome as a web-browser, an error is displayed in the terminal stating: ```Refused to set unsafe header "User-Agent"```. It does not effect the functionality of the app and for the purposes of this app, should not pose any security issues. This error message also appears in Microsoft Edge but does not appear in Firefox. No other browsers were tested.
