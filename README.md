@@ -1,6 +1,6 @@
 # photo-caption-generator
 
-This application is an online photo caption generator for social media posts built for the Fall 2022 Shopify Front End Intern Challenge. It lets users enter topics, themes/genres, nouns, short sentences or even hashtags revolving around their photos and returns captions that would best suit them. The Photo Caption Generator provides a clean and easy way for users to get caption ideas for their next social media posts.
+This application is an online photo caption generator for social media posts built for the Fall 2022 Shopify Front End Intern Challenge. It lets users enter topics, themes/genres, nouns, short sentences or even hashtags revolving around their photos and returns captions that would best suit them. The Photo Caption Generator provides a clean and easy way for users to get caption ideas for their next social media posts. Check out photo-caption-generator [here](https://photo-caption-generator.vercel.app/)
 
 ## How it was Built
 The application was built using [React](https://reactjs.org/) and [ChakraUI](https://chakra-ui.com/) and uses the [OpenAI API](https://openai.com/api/) which provides access to GPT-3. 
