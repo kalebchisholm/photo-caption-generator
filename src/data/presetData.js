@@ -2,6 +2,7 @@ export const presetData = [
   'Food',
   'Family',
   'Friends',
+  'Working Out',
   'Outdoors',
   'Scenery',
   'Movies',
