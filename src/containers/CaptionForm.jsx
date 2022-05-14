@@ -1,7 +1,7 @@
 /** 
  * FILE: CaptionForm.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/13/2022
+ * LAST MODIFIED: 05/14/2022
  * 
  * PURPOSE: Function component for the form which the user generates
  *          captions from and container for <Presets/>.
@@ -17,8 +17,7 @@ import {
   Button,
   Box
 } from '@chakra-ui/react'
-import { Preset } from '../components/Preset';
-import { PresetAccordion } from './PresetAccordion';
+import { PresetAccordion } from './PresetAccordion'
 
 const { Configuration, OpenAIApi } = require("openai");
 
@@ -37,7 +36,7 @@ export function CaptionForm(props) {
   // Handle submission of input
   const handleSubmit = e => {
     e.preventDefault()
-    if (!caption) return  // prevent empty submissions
+    if (!caption || /^\s*$/.test(caption)) return  // prevent empty submissions
     setLoading(true)      // stop further submissions until results complete loading
     
     // OPENAI CONFIGURATION

@@ -1,7 +1,7 @@
 /** 
  * FILE: CaptionList.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/13/2022
+ * LAST MODIFIED: 05/14/2022
  * 
  * PURPOSE: Function component for the page which contains the user form
  *          for the caption generator as well as displays presets and
@@ -22,10 +22,8 @@ export function CaptionList() {
   const [captions, setCaptions] = useState([])    // returned captions
   const [isResults, setResults] = useState(false) // conditional <Results/> rendering
 
+  // add to list of captions
   const addCaption = caption => {
-    // Quick input check + clear extra whitespace
-    if (!caption.text || /^\s*$/.test(caption.text)) return
-    // add to list of captions
     setCaptions([caption, ...captions])
   }
 
