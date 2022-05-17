@@ -1,12 +1,15 @@
 /** 
  * FILE: CaptionCard.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/13/2022
+ * LAST MODIFIED: 05/16/2022
  * 
  * PURPOSE: Function component for a caption that is returned from
  *          the generator.
+ * 
+ * PROPS:
+ *   themes - The user input for displaying the original prompt in the result.
+ *   data - The result of the prompt from the API.
 */
-
 
 // ------------------------------- IMPORTS ------------------------------------
 import { Grid, GridItem, Text } from "@chakra-ui/react";
@@ -25,7 +28,7 @@ export function CaptionCard(props) {
     >
       <Grid templateColumns='auto 1fr' gap='10px'>
         <Text fontWeight='bold'>Topic(s):</Text>
-        <Text>{props.themes}</Text>
+        <Text>{props.topic}</Text>
         <Text fontWeight='bold'>Caption:</Text>
         <Text>{props.data}</Text>
       </Grid>

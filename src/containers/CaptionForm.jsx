@@ -1,12 +1,17 @@
 /** 
  * FILE: CaptionForm.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/14/2022
+ * LAST MODIFIED: 05/16/2022
  * 
  * PURPOSE: Function component for the form which the user generates
  *          captions from and container for <Presets/>.
+ * 
+ * PROPS:
+ *   setResults - A state which is set true once prompts have been submitted
+ *                and results are visible on screen to user.
+ *   onSubmit - The function to invoke, passed as addCaptions from
+ *              captionList.jsx.
 */
-
 
 // ------------------------------- IMPORTS ------------------------------------
 import { useState } from 'react'

@@ -1,10 +1,14 @@
 /** 
  * FILE: PresetAccordion.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/13/2022
+ * LAST MODIFIED: 05/16/2022
  * 
  * PURPOSE: Function component for the container which displays all of the
  *          presets in an accordion.
+ * 
+ * PROPS: 
+ *   onClick - The function to pass to the Preset components, passed as 
+ *             handleChange from captionForm.jsx.
 */
 
 

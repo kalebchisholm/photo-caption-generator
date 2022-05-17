@@ -1,12 +1,16 @@
 /** 
  * FILE: Results.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/14/2022
+ * LAST MODIFIED: 05/16/2022
  * 
  * PURPOSE: Function component for the container which displays all of the
  *          captions that are generated.
+ * 
+ * PROPS: 
+ *   {captions} - Destructured caption to be output to user. Contains a .topic
+ *                and a .text which are the original prompt the user input and
+ *                the result of that prompt respectively.
 */
-
 
 // ------------------------------- IMPORTS ------------------------------------
 import { CaptionCard } from "../components/CaptionCard"
@@ -39,7 +43,7 @@ export function Results({captions}) {
             captions.map((caption) => (
               <CaptionCard 
                 key={keyNumber++}
-                themes={caption.topic} 
+                topic={caption.topic} 
                 data={caption.text}
               />
             ))
