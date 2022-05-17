@@ -1,7 +1,7 @@
 /** 
  * FILE: CaptionList.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/14/2022
+ * LAST MODIFIED: 05/17/2022
  * 
  * PURPOSE: Function component for the page which contains the user form
  *          for the caption generator as well as displays presets and
@@ -13,7 +13,15 @@
 import { useState } from 'react'
 import { Results } from '../containers/Results'
 import { CaptionForm } from '../containers/CaptionForm'
-import { Heading, Text, Flex, Box, Center, Button, Stack } from '@chakra-ui/react'
+import { 
+  Heading, 
+  Text, 
+  Flex, 
+  Box, 
+  Center, 
+  Button, 
+  Stack 
+} from '@chakra-ui/react'
 import { FaTrashAlt } from 'react-icons/fa'
 
 // ------------------------------ FUNCTION ------------------------------------
@@ -27,6 +35,7 @@ export function CaptionList() {
     setCaptions([caption, ...captions])
   }
 
+  // clear all captions
   const clearCaptions = () => {
     setCaptions([])
     setResults(false)
@@ -46,7 +55,8 @@ export function CaptionList() {
         </Heading>
         <Text textAlign='center' my='15px' fontSize='lg' fontWeight='semibold'>
           Enter themes, genres, nouns, hashtags, or brief sentences
-          that best describe your photo (seperate using commas):
+          that best describe your photo. Separate items using commas. 
+          E.g. "Dogs, Cats, Walking in the Park" (max 100 characters):
         </Text>
         <CaptionForm onSubmit={addCaption} setResults={setResults}/>
         <Box>
@@ -90,7 +100,7 @@ export function CaptionList() {
                 </Text> 
               </Button>
             </Flex>
-            <Box>{isResults && <Results captions={captions} />}</Box>
+            <Results captions={captions} />
           </Stack>
         }
       </Flex>

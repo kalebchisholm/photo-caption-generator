@@ -1,7 +1,7 @@
 /** 
  * FILE: CaptionForm.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/16/2022
+ * LAST MODIFIED: 05/17/2022
  * 
  * PURPOSE: Function component for the form which the user generates
  *          captions from and container for <Presets/>.
@@ -75,7 +75,7 @@ export function CaptionForm(props) {
 
     // FETCH OPENAI 
     openai.createCompletion("text-curie-001", {
-      prompt: `Write a creative and simple photo caption for a post on social media that involves the following genres: ${caption}.`,
+      prompt: `Write a creative and simple photo caption for a post on social media that involves the following: ${caption}.`,
       temperature: 0.7,
       max_tokens: 256,
       top_p: 1,

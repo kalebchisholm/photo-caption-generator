@@ -1,7 +1,7 @@
 /** 
  * FILE: PresetAccordion.jsx
  * AUTHOR: Kaleb Chisholm
- * LAST MODIFIED: 05/16/2022
+ * LAST MODIFIED: 05/17/2022
  * 
  * PURPOSE: Function component for the container which displays all of the
  *          presets in an accordion.
@@ -47,7 +47,7 @@ export function PresetAccordion(props) {
                     fontWeight='semibold' 
                     flex='1' 
                     textAlign='left'
-                    >
+                  >
                     Hide Presets
                   </Text>
                   <AiOutlineMinus />
@@ -66,7 +66,7 @@ export function PresetAccordion(props) {
                     fontWeight='semibold' 
                     flex='1' 
                     textAlign='left'
-                    >
+                  >
                     View Presets
                   </Text>
                   <AiOutlinePlus />
@@ -79,10 +79,19 @@ export function PresetAccordion(props) {
               borderBottomRadius='lg'
               bg='presetBg'
             >
-              <Flex maxW='55em' flexWrap='wrap' justifyContent='center' mt='10px'>
+              <Flex 
+                maxW='55em' 
+                flexWrap='wrap' 
+                justifyContent='center' 
+                mt='10px'
+              >
                 {
                   presetData.map((content) => (
-                    <Preset key={content} data={content} onClick={props.onClick} />
+                    <Preset 
+                      key={content} 
+                      data={content} 
+                      onClick={props.onClick} 
+                    />
                   ))
                 }
               </Flex>

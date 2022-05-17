@@ -14,7 +14,7 @@
 
 // ------------------------------- IMPORTS ------------------------------------
 import { CaptionCard } from "../components/CaptionCard"
-import { Box, Center, Text, Stack } from "@chakra-ui/react"
+import { Box, Center } from "@chakra-ui/react"
 
 
 // ------------------------------ FUNCTION ------------------------------------
