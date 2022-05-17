@@ -15,7 +15,7 @@ OpenAI provides a convenient alternative to using fetch. The API request is made
   const { Configuration, OpenAIApi } = require("openai");
 
   const configuration = new Configuration({
-      apiKey: YOUR_API_KEY_GOES_HERE
+      apiKey: process.env.REACT_APP_YOUR_API_KEY
   });
   
   const openai = new OpenAIApi(configuration)
@@ -46,6 +46,8 @@ The app is delivered to the user using React and is made clean and simple by uti
 2. Navigate into the newly cloned repository and install dependencies using ```npm ci```
 3. Run the app using ```npm start```
 4. Go to localhost:3000 in your web browser
+
+Important Note: You will need a ```.env``` file located in the root directory where you place your OpenAI API Secret Key. 
 
 ## Wishlist (To-do)
 These are the things I would like to improve upon the app if I had the time to carry out:
