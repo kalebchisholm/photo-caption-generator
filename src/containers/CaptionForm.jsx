@@ -88,14 +88,26 @@ export function CaptionForm(props) {
         topic: caption,
         text: response.data.choices[0].text
       })
-      setCaption('')      // clear input bar
-      setLoading(false)   // allow for more submissions
       toast({
         title: 'Caption Generated',
         status: 'success',
         duration: 5000,
         isClosable: true,
       })
+      setCaption('')      // clear input bar
+      setLoading(false)   // allow for more submissions
+    })
+    .catch(err => {
+      console.log(err.message)
+      toast({
+        title: 'Cannot reach OpenAI API',
+        description: err.message,
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
+      setCaption('')      // clear input bar
+      setLoading(false)   // allow for more submissions
     })
   }
 
