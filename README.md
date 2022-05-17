@@ -50,13 +50,11 @@ The app is delivered to the user using React and is made clean and simple by uti
 ## Wishlist (To-do)
 These are the things I would like to improve upon the app if I had the time to carry out:
 1. Utilize local storage to save responses if the user leaves or reloads the page.
-2. Dependent on the first item: Add a clear results button.
-3. Utilize Redux (or Contexts) to stop prop drilling.
-4. Add a light/dark mode toggle feature.
-5. Add styling to show the user that the input is required to generate a caption. Potentially use [ChakraUI Toast](https://chakra-ui.com/docs/components/feedback/toast)
-6. Add animations using [Framer Motion](https://www.framer.com/motion/)
-7. Allow the user which GPT-3 engine they would like to use for their captions.
+2. Utilize Redux (or Contexts) to mitigate prop drilling.
+3. Add a light/dark mode toggle feature.
+4. Add animations using [Framer Motion](https://www.framer.com/motion/)
+5. Allow the user which GPT-3 engine they would like to use for their captions.
 
 
 ## Note
-When using Google Chrome as a web-browser, an error is displayed in the terminal stating: ```Refused to set unsafe header "User-Agent"```. It does not effect the functionality of the app and for the purposes of this app, should not pose any security issues. This error message also appears in Microsoft Edge but does not appear in Firefox. No other browsers were tested.
+When using Google Chrome as a web-browser, an error is displayed in the terminal stating: ```Refused to set unsafe header "User-Agent"```. It does not effect the functionality of the app and for the purposes of this app, should not pose any security issues. This error message also appears in Microsoft Edge but does not appear in Firefox's console. No other browsers were tested.
