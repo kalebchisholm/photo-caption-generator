@@ -16,6 +16,7 @@ export const myTheme = extendTheme ({
     btnHoverColor: '#B0AFFD',
     headerColor: '#151f36',
     presetBg: '#D3D5D9',
+    deleteBtnColor: '#b83b3b',
   },
   styles: {
     global: () => ({

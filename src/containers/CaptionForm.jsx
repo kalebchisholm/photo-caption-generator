@@ -20,7 +20,8 @@ import {
   Input, 
   Flex, 
   Button,
-  Box
+  Box,
+  useToast
 } from '@chakra-ui/react'
 import { PresetAccordion } from './PresetAccordion'
 
@@ -33,6 +34,8 @@ export function CaptionForm(props) {
   const [caption, setCaption] = useState('')         // returned captions
   const [loading, setLoading] = useState(false)      // results loading
 
+  const toast = useToast()
+
   // Handle change in input bar
   const handleChange = e => {
     setCaption(e.target.value)
@@ -41,7 +44,27 @@ export function CaptionForm(props) {
   // Handle submission of input
   const handleSubmit = e => {
     e.preventDefault()
-    if (!caption || /^\s*$/.test(caption)) return  // prevent empty submissions
+    if (!caption || /^\s*$/.test(caption)) {
+      toast({
+        title: 'Invalid Input',
+        description: "Prompt is Required",
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
+      return
+    }
+    if (caption.length > 100) {
+      toast({
+        title: 'Invalid Input',
+        description: "Prompt exceeded maximum length of 100 characters",
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
+      return
+    }
+
     setLoading(true)      // stop further submissions until results complete loading
     
     // OPENAI CONFIGURATION
@@ -67,6 +90,12 @@ export function CaptionForm(props) {
       })
       setCaption('')      // clear input bar
       setLoading(false)   // allow for more submissions
+      toast({
+        title: 'Caption Generated',
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      })
     })
   }
 

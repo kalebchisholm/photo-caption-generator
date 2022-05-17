@@ -13,9 +13,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Firefox scrollbar customization (very limited, only color) */
+  scrollbar-color: #7371FC #141414;
 }
 
  code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* scrollbar width (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* scrollbar track (Chrome, Safari) */
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+/* scrollbar handle (Chrome, Safari) */
+::-webkit-scrollbar-thumb {
+  background: #7371FC;
+}
+
+/* scrollbar handle-hover (Chrome, Safari) */
+::-webkit-scrollbar-thumb:hover {
+  background: #B0AFFD;
 }

@@ -12,11 +12,14 @@
 */
 
 // ------------------------------- IMPORTS ------------------------------------
-import { Grid, GridItem, Text } from "@chakra-ui/react";
-
+import { Grid, GridItem, Box, Text, Button, useToast } from "@chakra-ui/react";
+import { MdContentCopy } from 'react-icons/md'
 
 // ------------------------------ FUNCTION ------------------------------------
 export function CaptionCard(props) {
+
+  const toast = useToast()
+
   return (
     <GridItem
       bg='white'
@@ -26,11 +29,31 @@ export function CaptionCard(props) {
       shadow='5px 5px 5px #949494'
       w='full'
     >
-      <Grid templateColumns='auto 1fr' gap='10px'>
+      <Grid templateColumns='auto 1fr auto' gap='10px'>
         <Text fontWeight='bold'>Topic(s):</Text>
         <Text>{props.topic}</Text>
+        <Box></Box>
         <Text fontWeight='bold'>Caption:</Text>
         <Text>{props.data}</Text>
+        <Button
+          onClick={() => {
+            navigator.clipboard.writeText(props.data)
+            toast({
+              title: 'Caption Copied to Clipboard',
+              status: 'success',
+              duration: 5000,
+              isClosable: true,
+            })
+          }}
+          borderRadius='full'
+          h='50px'
+          bg='presetBg'
+          _hover={{
+            bg: 'btnHoverColor'
+          }}
+        >
+          <MdContentCopy fontSize='14pt'/>
+        </Button>
       </Grid>
     </GridItem>
   )

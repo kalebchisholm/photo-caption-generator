@@ -13,8 +13,8 @@
 import { useState } from 'react'
 import { Results } from '../containers/Results'
 import { CaptionForm } from '../containers/CaptionForm'
-import { Heading, Text, Flex, Box, Center } from '@chakra-ui/react'
-
+import { Heading, Text, Flex, Box, Center, Button, Stack } from '@chakra-ui/react'
+import { FaTrashAlt } from 'react-icons/fa'
 
 // ------------------------------ FUNCTION ------------------------------------
 export function CaptionList() {
@@ -25,6 +25,11 @@ export function CaptionList() {
   // add to list of captions
   const addCaption = caption => {
     setCaptions([caption, ...captions])
+  }
+
+  const clearCaptions = () => {
+    setCaptions([])
+    setResults(false)
   }
 
   return (
@@ -58,7 +63,36 @@ export function CaptionList() {
             </Text>
           }
         </Box>
-        <Box>{isResults && <Results captions={captions} />}</Box>
+        {
+          isResults &&
+          <Stack mt='10px'>
+            <Flex justify='space-between'>
+              <Text
+                fontSize='xl'
+                fontWeight='semibold'
+                pl='10px'
+                mt='10px'
+              >
+                Results:
+              </Text>
+              <Button
+                onClick={clearCaptions}
+                bg='btnColor'
+                border='2pt solid black'
+                _hover={{
+                  bg: 'btnHoverColor'
+                }}
+                mx='10px'
+              >
+                <FaTrashAlt /> 
+                <Text pl='5px' pb='1px'>
+                  Clear Captions
+                </Text> 
+              </Button>
+            </Flex>
+            <Box>{isResults && <Results captions={captions} />}</Box>
+          </Stack>
+        }
       </Flex>
     </Center>
   )
