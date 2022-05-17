@@ -57,4 +57,4 @@ These are the things I would like to improve upon the app if I had the time to c
 
 
 ## Note
-When using Google Chrome as a web-browser, an error is displayed in the terminal stating: ```Refused to set unsafe header "User-Agent"```. It does not effect the functionality of the app and for the purposes of this app, should not pose any security issues. This error message also appears in Microsoft Edge but does not appear in Firefox. No other browsers were tested.
+When using Google Chrome as a web-browser, an error is displayed in the terminal stating: ```Refused to set unsafe header "User-Agent"```. It does not effect the functionality of the app and for the purposes of this app, should not pose any security issues. This error message also appears in Microsoft Edge but does not appear in Firefox's console. No other browsers were tested.
