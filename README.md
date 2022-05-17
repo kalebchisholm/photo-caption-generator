@@ -39,7 +39,9 @@ The app is delivered to the user using React and is made clean and simple by uti
 ## Features
 * Input works on themes/genres, nouns, short sentences that describe the context of the photo, and hashtags.
 * Displays all generated caption results in a list sorted from newest (top) to oldest (bottom).
+* Copy response button allows for easily copying the user's desired caption.
 * Presets for common photo themes/genres are available for ease of use.
+* [ChakraUI Toast](https://chakra-ui.com/docs/components/feedback/toast) feedback notifications provide updates on caption generating, input errors, or API fetch errors.
 
 ## Running the App
 1. Clone the repository ```git clone https://github.com/Kaleb-Chisholm/photo-caption-generator.git```
